@@ -12,8 +12,9 @@ public class InsultGenerator {
 		String vowels = "AEIOU";
 		String article = "an";
 		String theInsult = "";
+		String databaseURL = "jdbc:postgresql://";
 		try {
- 			String databaseURL = "jdbc:postgresql://";
+ 			
  			databaseURL += System.getenv("POSTGRESQL_SERVICE_HOST");
  			databaseURL += "/" + System.getenv("POSTGRESQL_DATABASE");
  			String username = System.getenv("POSTGRESQL_USER");
@@ -34,7 +35,7 @@ public class InsultGenerator {
  				connection.close();
  			}
  		} catch (Exception e) {
- 			return "Database connection problem!"+e.getMessage();
+ 			return "Database connection("+databaseURL+") problem!"+e.getMessage();
  		}
  		return theInsult;
 	}
