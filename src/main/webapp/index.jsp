@@ -8,7 +8,7 @@
 <title>Insult Generator</title>
 </head>
 <body>
-Insults auto generated for your reading pleasure:
+Pre coded Insults auto generated for your reading pleasure! 
 <%
 out.println(new InsultGenerator().generateInsult());
 %>
